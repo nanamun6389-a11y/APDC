@@ -1,0 +1,10 @@
+APDC MINI DESIGN REPAIR
+
+이 파일은 디자인(CSS)이 적용되지 않은 경우 사용하는 복구본입니다.
+
+업로드:
+- 압축 안의 모든 HTML 파일
+- style.css
+
+기존 저장소의 같은 이름 파일 위에 덮어쓴 뒤 Commit changes를 누르세요.
+shared.js와 events.json은 기존 파일을 그대로 사용합니다.
