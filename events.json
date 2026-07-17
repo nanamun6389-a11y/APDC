@@ -1,42 +1,98 @@
 [
   {
     "no": 1,
+    "section": "Amateur",
     "title": "Amateur Latin",
     "subtitle": "CSR",
-    "competitors": [
-      "김현욱 & 최지혜",
-      "원레이 & 김숙희"
+    "round": "Final",
+    "entries": [
+      {
+        "backNo": 1,
+        "name": "김현욱 & 최지혜",
+        "type": "Couple"
+      },
+      {
+        "backNo": 2,
+        "name": "원레이 & 김숙희",
+        "type": "Couple"
+      }
     ]
   },
   {
     "no": 2,
+    "section": "Over 35",
     "title": "Over 35 Solo",
     "subtitle": "",
-    "competitors": [
-      "이혜경",
-      "최성지",
-      "박효선",
-      "김현계"
+    "round": "Final",
+    "entries": [
+      {
+        "backNo": 35,
+        "name": "이혜경",
+        "type": "Solo"
+      },
+      {
+        "backNo": 36,
+        "name": "최성지",
+        "type": "Solo"
+      },
+      {
+        "backNo": 37,
+        "name": "박효선",
+        "type": "Solo"
+      },
+      {
+        "backNo": 38,
+        "name": "김현계",
+        "type": "Solo"
+      }
     ]
   },
   {
     "no": 3,
+    "section": "Under 14",
     "title": "Under 14",
     "subtitle": "",
-    "competitors": [
-      "이나율",
-      "백율"
+    "round": "Final",
+    "entries": [
+      {
+        "backNo": 95,
+        "name": "이나율",
+        "type": "Solo"
+      },
+      {
+        "backNo": 96,
+        "name": "백율",
+        "type": "Solo"
+      }
     ]
   },
   {
     "no": 4,
+    "section": "Over 19",
     "title": "Over 19",
     "subtitle": "",
-    "competitors": [
-      "양지현",
-      "황은진",
-      "유시진",
-      "송다솜"
+    "round": "Final",
+    "entries": [
+      {
+        "backNo": 17,
+        "name": "양지현",
+        "type": "Solo"
+      },
+      {
+        "backNo": 18,
+        "name": "황은진",
+        "type": "Solo"
+      },
+      {
+        "backNo": 19,
+        "name": "유시진",
+        "type": "Solo"
+      },
+      {
+        "backNo": 20,
+        "name": "송다솜",
+        "type": "Solo"
+      }
     ]
   }
 ]
