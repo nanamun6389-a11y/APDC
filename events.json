@@ -1,0 +1,42 @@
+[
+  {
+    "no": 1,
+    "title": "Amateur Latin",
+    "subtitle": "CSR",
+    "competitors": [
+      "김현욱 & 최지혜",
+      "원레이 & 김숙희"
+    ]
+  },
+  {
+    "no": 2,
+    "title": "Over 35 Solo",
+    "subtitle": "",
+    "competitors": [
+      "이혜경",
+      "최성지",
+      "박효선",
+      "김현계"
+    ]
+  },
+  {
+    "no": 3,
+    "title": "Under 14",
+    "subtitle": "",
+    "competitors": [
+      "이나율",
+      "백율"
+    ]
+  },
+  {
+    "no": 4,
+    "title": "Over 19",
+    "subtitle": "",
+    "competitors": [
+      "양지현",
+      "황은진",
+      "유시진",
+      "송다솜"
+    ]
+  }
+]
