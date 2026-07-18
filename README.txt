@@ -10,11 +10,11 @@ EXTRACTION RULE
 - entries.json contains the extracted rows.
 - The source players.json does not contain a country field, so country is intentionally left blank rather than inferred.
 
-HEAT / EVENT RULES
+EVENT / EVENT RULES
 - EVENT remains independent for judging and results.
-- HEAT may contain multiple EVENTs only when the event title has the same explicit dance code/composition.
+- EVENT may contain multiple EVENTs only when the event title has the same explicit dance code/composition.
 - Events with unspecified dance composition are not combined by assumption.
-- The same person is prevented from appearing twice inside one HEAT, including when the person appears once as Solo and once inside a Couple.
+- The same person is prevented from appearing twice inside one EVENT, including when the person appears once as Solo and once inside a Couple.
 
 ADMIN PASSWORD
 0070
@@ -31,15 +31,15 @@ NAME CORRECTION
 
 LATEST UPDATE
 - Judge list: Kim Tae Won (김태원) only.
-- Combined HEAT notice added.
+- Combined EVENT notice added.
 - Korean + easy English MC/LIVE/BROADCAST wording added:
-  이번 HEAT에는 여러 EVENT가 함께 진행됩니다. 심사위원께서는 각 EVENT를 모두 개별 심사해 주세요.
-  Multiple events are running in this heat. Please judge each event separately.
+  여러 연령 EVENT가 함께 진행됩니다. 심사위원께서는 표시된 각 EVENT를 개별 심사해 주세요.
+  Multiple events are running in this group. Please judge each event separately.
 
 EVENT NUMBER UPDATE
 - Mini-program EVENT numbers have been renumbered sequentially from 1 to 33.
 - Original APDC SEARCH event numbers were used only to extract the correct source entries.
-- All mini HEAT/EVENT references now use the new sequential mini EVENT numbers.
+- All mini EVENT/EVENT references now use the new sequential mini EVENT numbers.
 - event_number_mapping.json keeps the old-to-new number mapping for verification.
 
 FINAL CLEANUP
@@ -47,3 +47,10 @@ FINAL CLEANUP
 - Judge: Kim Tae Won / 김태원 only.
 - Removed duplicate Kim Tae Won wording from Admin.
 - Removed Choi JiHye from Judge UI and judge configuration.
+
+EVENT-ONLY OPERATION UPDATE
+- The word/concept 'HEAT' is removed from the user-facing mini program.
+- Operation is shown by EVENT number.
+- When different age events run together, they are displayed together under one running title, with each EVENT listed separately.
+- Judging and results remain fully separate by EVENT.
+- Shared-floor grouping data is stored internally as running_groups.json, not as HEAT.

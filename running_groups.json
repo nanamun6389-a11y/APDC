@@ -1,0 +1,1050 @@
+[
+  {
+    "groupNo": 1,
+    "title": "Under 12 Solo CR / Under 15 Solo CR / Over 35 Solo CR",
+    "eventNos": [
+      1,
+      11,
+      22
+    ],
+    "events": [
+      {
+        "no": 1,
+        "event": "1",
+        "section": "Under 12",
+        "title": "Under 12 Solo CR",
+        "eventName": "Under 12 Solo CR",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 12 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 11,
+        "event": "11",
+        "section": "Under 15",
+        "title": "Under 15 Solo CR",
+        "eventName": "Under 15 Solo CR",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 22,
+        "event": "22",
+        "section": "Over 35",
+        "title": "Over 35 Solo CR",
+        "eventName": "Over 35 Solo CR",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Over 35 Solo",
+        "entries": [
+          {
+            "backNo": 31,
+            "number": "31",
+            "name": "HyeKyung LEE",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 32,
+            "number": "32",
+            "name": "SeongJi CHOI",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 33,
+            "number": "33",
+            "name": "HyunGye KIM",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 34,
+            "number": "34",
+            "name": "HyoSeon PARK",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 35,
+            "number": "35",
+            "name": "SukHee KIM",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 2,
+    "title": "Under 12 Solo RJ / Under 15 Solo RJ",
+    "eventNos": [
+      2,
+      12
+    ],
+    "events": [
+      {
+        "no": 2,
+        "event": "2",
+        "section": "Under 12",
+        "title": "Under 12 Solo RJ",
+        "eventName": "Under 12 Solo RJ",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 12 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 12,
+        "event": "12",
+        "section": "Under 15",
+        "title": "Under 15 Solo RJ",
+        "eventName": "Under 15 Solo RJ",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 3,
+    "title": "Under 12 Solo CRS / Under 15 Solo CRS / Over 19 Solo Latin CRS / Mania Latin CRS",
+    "eventNos": [
+      3,
+      5,
+      28,
+      30
+    ],
+    "events": [
+      {
+        "no": 3,
+        "event": "3",
+        "section": "Under 12",
+        "title": "Under 12 Solo CRS",
+        "eventName": "Under 12 Solo CRS",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 12 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 5,
+        "event": "5",
+        "section": "Under 15",
+        "title": "Under 15 Solo CRS",
+        "eventName": "Under 15 Solo CRS",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 28,
+        "event": "28",
+        "section": "Over 19",
+        "title": "Over 19 Solo Latin CRS",
+        "eventName": "Over 19 Solo Latin CRS",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Over 19 Solo",
+        "entries": [
+          {
+            "backNo": 17,
+            "number": "17",
+            "name": "JiHyeon YANG",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 18,
+            "number": "18",
+            "name": "EunJin HWANG",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 19,
+            "number": "19",
+            "name": "SiJin YOO",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 20,
+            "number": "20",
+            "name": "DaSom SONG",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 30,
+        "event": "30",
+        "section": "Mania",
+        "title": "Mania Latin CRS",
+        "eventName": "Mania Latin CRS",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Mania Couple",
+        "entries": [
+          {
+            "backNo": 211,
+            "number": "211",
+            "name": "Wen Lei & SukHee KIM",
+            "country": "",
+            "type": "Couple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 4,
+    "title": "Under 12 Solo CRJ / Under 15 Solo CRJ",
+    "eventNos": [
+      4,
+      13
+    ],
+    "events": [
+      {
+        "no": 4,
+        "event": "4",
+        "section": "Under 12",
+        "title": "Under 12 Solo CRJ",
+        "eventName": "Under 12 Solo CRJ",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 12 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 13,
+        "event": "13",
+        "section": "Under 15",
+        "title": "Under 15 Solo CRJ",
+        "eventName": "Under 15 Solo CRJ",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 5,
+    "title": "Under 15 Solo R / Under 10 Solo R / Over 35 Solo R",
+    "eventNos": [
+      6,
+      15,
+      23
+    ],
+    "events": [
+      {
+        "no": 6,
+        "event": "6",
+        "section": "Under 15",
+        "title": "Under 15 Solo R",
+        "eventName": "Under 15 Solo R",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 15,
+        "event": "15",
+        "section": "Under 10",
+        "title": "Under 10 Solo R",
+        "eventName": "Under 10 Solo R",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 10 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 23,
+        "event": "23",
+        "section": "Over 35",
+        "title": "Over 35 Solo R",
+        "eventName": "Over 35 Solo R",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Over 35 Solo",
+        "entries": [
+          {
+            "backNo": 31,
+            "number": "31",
+            "name": "HyeKyung LEE",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 32,
+            "number": "32",
+            "name": "SeongJi CHOI",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 33,
+            "number": "33",
+            "name": "HyunGye KIM",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 34,
+            "number": "34",
+            "name": "HyoSeon PARK",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 35,
+            "number": "35",
+            "name": "SukHee KIM",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 6,
+    "title": "Under 15 Solo C / Under 10 Solo C / Over 35 Solo C",
+    "eventNos": [
+      7,
+      16,
+      25
+    ],
+    "events": [
+      {
+        "no": 7,
+        "event": "7",
+        "section": "Under 15",
+        "title": "Under 15 Solo C",
+        "eventName": "Under 15 Solo C",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 16,
+        "event": "16",
+        "section": "Under 10",
+        "title": "Under 10 Solo C",
+        "eventName": "Under 10 Solo C",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 10 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 25,
+        "event": "25",
+        "section": "Over 35",
+        "title": "Over 35 Solo C",
+        "eventName": "Over 35 Solo C",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Over 35 Solo",
+        "entries": [
+          {
+            "backNo": 31,
+            "number": "31",
+            "name": "HyeKyung LEE",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 32,
+            "number": "32",
+            "name": "SeongJi CHOI",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 33,
+            "number": "33",
+            "name": "HyunGye KIM",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 34,
+            "number": "34",
+            "name": "HyoSeon PARK",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 35,
+            "number": "35",
+            "name": "SukHee KIM",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 7,
+    "title": "Under 15 Solo S / Under 10 Solo S / Over 35 Solo S",
+    "eventNos": [
+      8,
+      17,
+      26
+    ],
+    "events": [
+      {
+        "no": 8,
+        "event": "8",
+        "section": "Under 15",
+        "title": "Under 15 Solo S",
+        "eventName": "Under 15 Solo S",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 17,
+        "event": "17",
+        "section": "Under 10",
+        "title": "Under 10 Solo S",
+        "eventName": "Under 10 Solo S",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 10 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 26,
+        "event": "26",
+        "section": "Over 35",
+        "title": "Over 35 Solo S",
+        "eventName": "Over 35 Solo S",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Over 35 Solo",
+        "entries": [
+          {
+            "backNo": 31,
+            "number": "31",
+            "name": "HyeKyung LEE",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 32,
+            "number": "32",
+            "name": "SeongJi CHOI",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 33,
+            "number": "33",
+            "name": "HyunGye KIM",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 34,
+            "number": "34",
+            "name": "HyoSeon PARK",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 35,
+            "number": "35",
+            "name": "SukHee KIM",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 8,
+    "title": "Under 15 Solo P",
+    "eventNos": [
+      9
+    ],
+    "events": [
+      {
+        "no": 9,
+        "event": "9",
+        "section": "Under 15",
+        "title": "Under 15 Solo P",
+        "eventName": "Under 15 Solo P",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 9,
+    "title": "Under 15 Solo J",
+    "eventNos": [
+      10
+    ],
+    "events": [
+      {
+        "no": 10,
+        "event": "10",
+        "section": "Under 15",
+        "title": "Under 15 Solo J",
+        "eventName": "Under 15 Solo J",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 10,
+    "title": "Under 15 Solo CSRJ",
+    "eventNos": [
+      14
+    ],
+    "events": [
+      {
+        "no": 14,
+        "event": "14",
+        "section": "Under 15",
+        "title": "Under 15 Solo CSRJ",
+        "eventName": "Under 15 Solo CSRJ",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 15 Solo",
+        "entries": [
+          {
+            "backNo": 95,
+            "number": "95",
+            "name": "Nayool LEE",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 11,
+    "title": "Under 10 Solo CRS",
+    "eventNos": [
+      18
+    ],
+    "events": [
+      {
+        "no": 18,
+        "event": "18",
+        "section": "Under 10",
+        "title": "Under 10 Solo CRS",
+        "eventName": "Under 10 Solo CRS",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 10 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 12,
+    "title": "Under 10 Solo CRJ",
+    "eventNos": [
+      19
+    ],
+    "events": [
+      {
+        "no": 19,
+        "event": "19",
+        "section": "Under 10",
+        "title": "Under 10 Solo CRJ",
+        "eventName": "Under 10 Solo CRJ",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 10 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 13,
+    "title": "Under 10 Solo CR / Mania Latin CR",
+    "eventNos": [
+      20,
+      29
+    ],
+    "events": [
+      {
+        "no": 20,
+        "event": "20",
+        "section": "Under 10",
+        "title": "Under 10 Solo CR",
+        "eventName": "Under 10 Solo CR",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 10 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      },
+      {
+        "no": 29,
+        "event": "29",
+        "section": "Mania",
+        "title": "Mania Latin CR",
+        "eventName": "Mania Latin CR",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Mania Couple",
+        "entries": [
+          {
+            "backNo": 211,
+            "number": "211",
+            "name": "Wen Lei & SukHee KIM",
+            "country": "",
+            "type": "Couple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 14,
+    "title": "Under 10 Solo RJ",
+    "eventNos": [
+      21
+    ],
+    "events": [
+      {
+        "no": 21,
+        "event": "21",
+        "section": "Under 10",
+        "title": "Under 10 Solo RJ",
+        "eventName": "Under 10 Solo RJ",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Under 10 Solo",
+        "entries": [
+          {
+            "backNo": 44,
+            "number": "44",
+            "name": "Yul BAEK",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 15,
+    "title": "Over 35 Solo CSR",
+    "eventNos": [
+      24
+    ],
+    "events": [
+      {
+        "no": 24,
+        "event": "24",
+        "section": "Over 35",
+        "title": "Over 35 Solo CSR",
+        "eventName": "Over 35 Solo CSR",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Over 35 Solo",
+        "entries": [
+          {
+            "backNo": 31,
+            "number": "31",
+            "name": "HyeKyung LEE",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 32,
+            "number": "32",
+            "name": "SeongJi CHOI",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 33,
+            "number": "33",
+            "name": "HyunGye KIM",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 34,
+            "number": "34",
+            "name": "HyoSeon PARK",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 35,
+            "number": "35",
+            "name": "SukHee KIM",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 16,
+    "title": "Over 19 Solo Latin 5 Dance",
+    "eventNos": [
+      27
+    ],
+    "events": [
+      {
+        "no": 27,
+        "event": "27",
+        "section": "Over 19",
+        "title": "Over 19 Solo Latin 5 Dance",
+        "eventName": "Over 19 Solo Latin 5 Dance",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Over 19 Solo",
+        "entries": [
+          {
+            "backNo": 17,
+            "number": "17",
+            "name": "JiHyeon YANG",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 18,
+            "number": "18",
+            "name": "EunJin HWANG",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 19,
+            "number": "19",
+            "name": "SiJin YOO",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 20,
+            "number": "20",
+            "name": "DaSom SONG",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 17,
+    "title": "Asia Pacific Amateur Solo Latin",
+    "eventNos": [
+      31
+    ],
+    "events": [
+      {
+        "no": 31,
+        "event": "31",
+        "section": "Amateur",
+        "title": "Asia Pacific Amateur Solo Latin",
+        "eventName": "Asia Pacific Amateur Solo Latin",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Asia Pacific Amateur Solo Latin",
+        "entries": [
+          {
+            "backNo": 17,
+            "number": "17",
+            "name": "JiHyeon YANG",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 18,
+            "number": "18",
+            "name": "EunJin HWANG",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 19,
+            "number": "19",
+            "name": "SiJin YOO",
+            "country": "",
+            "type": "Solo"
+          },
+          {
+            "backNo": 20,
+            "number": "20",
+            "name": "DaSom SONG",
+            "country": "",
+            "type": "Solo"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 18,
+    "title": "Asia Pacific Amateur Latin",
+    "eventNos": [
+      32
+    ],
+    "events": [
+      {
+        "no": 32,
+        "event": "32",
+        "section": "Amateur",
+        "title": "Asia Pacific Amateur Latin",
+        "eventName": "Asia Pacific Amateur Latin",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Amateur Couple",
+        "entries": [
+          {
+            "backNo": 1,
+            "number": "1",
+            "name": "HyunOuk KIM & JiHye CHOI",
+            "country": "",
+            "type": "Couple"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "groupNo": 19,
+    "title": "Ama Rising Star Latin",
+    "eventNos": [
+      33
+    ],
+    "events": [
+      {
+        "no": 33,
+        "event": "33",
+        "section": "Amateur",
+        "title": "Ama Rising Star Latin",
+        "eventName": "Ama Rising Star Latin",
+        "subtitle": "",
+        "round": "",
+        "style": "Latin",
+        "division": "Amateur Couple",
+        "entries": [
+          {
+            "backNo": 1,
+            "number": "1",
+            "name": "HyunOuk KIM & JiHye CHOI",
+            "country": "",
+            "type": "Couple"
+          }
+        ]
+      }
+    ]
+  }
+]
