@@ -1,16 +1,26 @@
-APDC MINI ALL-IN-ONE
+APDC MINI PROGRAM — SOURCE-SYNC REBUILD
 
-페이지:
-- index.html: 첫 화면
-- search.html: 선수·백넘버·종목 검색
-- dashboard.html: START / FINISH / NEXT
-- judge.html: 김태원·최지혜 순위 입력
-- mc.html: MC 안내 화면
-- live.html: LIVE 화면
-- broadcast.html: 대형 송출 화면
-- results.html: 심사 결과 확인·최종 결과 확정
+SOURCE OF TRUTH
+- APDC_SEARCH_ASIA_PACIFIC_AMATEUR_LATIN_FIXED.zip
+- players.json inside that ZIP
 
-중요:
-- 이 미니 버전은 같은 브라우저의 탭 사이에서 실시간 동기화됩니다.
-- 서로 다른 휴대폰/컴퓨터 간 실시간 동기화는 Firebase 같은 온라인 데이터베이스 연결이 필요합니다.
-- 현재 데이터는 일요일 시범 종목 4개만 포함합니다.
+EXTRACTION RULE
+- Exact competitor/team name match only for the 13 requested participant records.
+- No event was manually added or inferred.
+- entries.json contains the extracted rows.
+- The source players.json does not contain a country field, so country is intentionally left blank rather than inferred.
+
+HEAT / EVENT RULES
+- EVENT remains independent for judging and results.
+- HEAT may contain multiple EVENTs only when the event title has the same explicit dance code/composition.
+- Events with unspecified dance composition are not combined by assumption.
+- The same person is prevented from appearing twice inside one HEAT, including when the person appears once as Solo and once inside a Couple.
+
+ADMIN PASSWORD
+0070
+
+PUBLIC
+index.html = Entry Search only
+
+ADMIN
+admin.html -> Dashboard / Judge / MC / Live / Broadcast / Results
