@@ -24,3 +24,23 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.top{heigh
 .heat-events{display:grid;gap:8px;margin-top:14px}.heat-event-row{display:grid;grid-template-columns:105px 1fr auto;gap:10px;align-items:center;padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#fff}.heat-event-row b{font-size:12px;letter-spacing:.06em}.heat-event-row em{font-style:normal;color:var(--muted);font-size:12px}.judge-toolbar{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center}.judge-toolbar .badge{margin-top:0}.event-tabs{display:flex;gap:8px;overflow:auto;padding:14px 0 2px}.event-tab{min-width:150px;padding:12px;border:1px solid #aaa;border-radius:12px;background:#fff;text-align:left;font-weight:900;cursor:pointer}.event-tab span,.event-tab small{display:block}.event-tab small{margin-top:5px;color:#777;font-weight:600}.event-tab.active{background:#000;color:#fff;border-color:#000}.event-tab.active small{color:#bbb}.event-tab.done:not(.active){border:2px solid #111}.screen-events{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:1100px;margin-top:18px}.screen-events span{border:1px solid #444;border-radius:999px;padding:8px 12px;color:#ccc;font-size:14px}
 @media(max-width:650px){.heat-event-row{grid-template-columns:1fr}.heat-event-row em{display:none}.judge-toolbar{grid-template-columns:1fr}.event-tab{min-width:135px}}
 .rank-pick{min-width:64px;height:42px;border:1px solid #111;background:#fff;color:#111;border-radius:8px;font-weight:800;font-size:16px;cursor:pointer}.rank-pick.selected{background:#111;color:#fff}.rank-row.selected td{background:#f3f3f3}.rank-row{cursor:pointer}
+
+/* Judge tap-to-rank v2 */
+.rank-row { cursor:pointer; -webkit-tap-highlight-color:transparent; user-select:none; }
+.rank-row td { padding-top:18px; padding-bottom:18px; }
+.rank-row.selected { background:#f2f2f2; }
+.rank-pick {
+  display:inline-flex;
+  min-width:76px;
+  min-height:48px;
+  align-items:center;
+  justify-content:center;
+  border:2px solid #111;
+  border-radius:14px;
+  font-weight:800;
+  background:#fff;
+}
+.rank-pick.selected {
+  background:#111;
+  color:#fff;
+}
