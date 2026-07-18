@@ -1,4 +1,6 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APDC Admin</title><link rel="stylesheet" href="style.css?v=4"></head><body class="home"><main class="homebox admin-login"><div class="homebrand">APDC MINI ADMIN</div><div id="loginBox"><h1>Admin Login</h1><p>관리자 비밀번호를 입력하세요.</p><div class="searchbar"><input id="pw" class="input" type="password" inputmode="numeric" placeholder="Password"><button id="loginBtn" class="btn dark">LOGIN</button></div><div id="msg" class="notice"></div></div><div id="adminMenu" class="hidden"><h1>Admin Menu</h1><p>운영 및 심사 기능을 선택하세요.</p><div class="menu"><a href="dashboard.html">DASHBOARD<small>EVENT START · FINISH · NEXT 운영</small></a><a href="judge.html">JUDGE<small>김태원 · 망나뇽 · 문나나 순위 입력</small></a><a href="mc.html">MC<small>현재 및 다음 경기 안내문</small></a><a href="live.html">LIVE<small>현장 진행 화면</small></a><a href="broadcast.html">BROADCAST<small>대형 화면 송출</small></a><a href="results.html">RESULTS<small>결과 확인 · CSV · 인쇄</small></a></div><div class="menu" style="margin-top:14px"><a href="settings.html">SETTINGS<small>EVENT 심사 초기화</small></a></div><div style="margin-top:14px"><button id="logoutBtn" class="btn">LOGOUT</button> <a class="btn" href="index.html">ENTRY SEARCH</a></div></div>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APDC Admin</title><link rel="stylesheet" href="style.css?v=4"><style>
+.menu a{position:relative!important;z-index:50!important;pointer-events:auto!important;cursor:pointer!important;touch-action:manipulation}
+</style></head><body class="home"><main class="homebox admin-login"><div class="homebrand">APDC MINI ADMIN</div><div id="loginBox"><h1>Admin Login</h1><p>관리자 비밀번호를 입력하세요.</p><div class="searchbar"><input id="pw" class="input" type="password" inputmode="numeric" placeholder="Password"><button id="loginBtn" class="btn dark">LOGIN</button></div><div id="msg" class="notice"></div></div><div id="adminMenu" class="hidden"><h1>Admin Menu</h1><p>운영 및 심사 기능을 선택하세요.</p><div class="menu"><a href="dashboard.html" onclick="window.location.href=\'dashboard.html\';return false;">DASHBOARD<small>EVENT START · FINISH · NEXT 운영</small></a><a href="judge.html" onclick="window.location.href=\'judge.html\';return false;">JUDGE<small>김태원 · 망나뇽 · 문나나 순위 입력</small></a><a href="mc.html" onclick="window.location.href=\'mc.html\';return false;">MC<small>현재 및 다음 경기 안내문</small></a><a href="live.html" onclick="window.location.href=\'live.html\';return false;">LIVE<small>현장 진행 화면</small></a><a href="broadcast.html" onclick="window.location.href=\'broadcast.html\';return false;">BROADCAST<small>대형 화면 송출</small></a><a href="results.html" onclick="window.location.href=\'results.html\';return false;">RESULTS<small>결과 확인 · CSV · 인쇄</small></a></div><div class="menu" style="margin-top:14px"><a href="settings.html" onclick="window.location.href=\'settings.html\';return false;">SETTINGS<small>EVENT 심사 초기화</small></a></div><div style="margin-top:14px"><button id="logoutBtn" class="btn">LOGOUT</button> <a class="btn" href="index.html" onclick="window.location.href=\'index.html\';return false;">ENTRY SEARCH</a></div></div>
 
 </main><script>
 const ADMIN_KEY='apdc_mini_admin_ok';
@@ -9,4 +11,14 @@ loginBtn.onclick=login;pw.addEventListener('keydown',e=>{if(e.key==='Enter')logi
 function login(){if(pw.value==='0070'){sessionStorage.setItem(ADMIN_KEY,'1');showMenu()}else{msg.textContent='비밀번호가 올바르지 않습니다.';pw.value='';pw.focus()}}
 function showMenu(){loginBox.classList.add('hidden');adminMenu.classList.remove('hidden')}
 logoutBtn.onclick=()=>{sessionStorage.removeItem(ADMIN_KEY);location.href='index.html'};
+document.addEventListener('click',function(e){
+  const a=e.target.closest('a[href]');
+  if(!a)return;
+  const href=a.getAttribute('href');
+  if(!href)return;
+  if(['dashboard.html','judge.html','mc.html','live.html','broadcast.html','results.html','settings.html','index.html'].includes(href)){
+    e.preventDefault();
+    window.location.href=href;
+  }
+});
 </script></body></html>
