@@ -24,3 +24,7 @@ index.html = Entry Search only
 
 ADMIN
 admin.html -> Dashboard / Judge / MC / Live / Broadcast / Results
+
+NAME CORRECTION
+- Source label 'Heon KIM' was corrected to 'HyunGye KIM' per organizer confirmation (김현계).
+- Event participation was not changed or inferred; only the participant name label was corrected.
