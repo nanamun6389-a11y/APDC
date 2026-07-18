@@ -8,12 +8,12 @@
     "entries": [
       {
         "backNo": 1,
-        "name": "김현욱 & 최지혜",
+        "name": "HyunOuk KIM & JiHye CHOI",
         "type": "Couple"
       },
       {
-        "backNo": 2,
-        "name": "원레이 & 김숙희",
+        "backNo": 211,
+        "name": "Wen Lei & SukHee KIM",
         "type": "Couple"
       }
     ]
@@ -22,27 +22,27 @@
     "no": 2,
     "section": "Over 35",
     "title": "Over 35 Solo",
-    "subtitle": "",
+    "subtitle": "CSR",
     "round": "Final",
     "entries": [
       {
-        "backNo": 35,
-        "name": "이혜경",
+        "backNo": 31,
+        "name": "HyeKyung LEE",
         "type": "Solo"
       },
       {
-        "backNo": 36,
-        "name": "최성지",
+        "backNo": 32,
+        "name": "SeongJi CHOI",
         "type": "Solo"
       },
       {
-        "backNo": 37,
-        "name": "박효선",
+        "backNo": 34,
+        "name": "HyoSeon PARK",
         "type": "Solo"
       },
       {
-        "backNo": 38,
-        "name": "김현계",
+        "backNo": 33,
+        "name": "Heon KIM",
         "type": "Solo"
       }
     ]
@@ -51,17 +51,17 @@
     "no": 3,
     "section": "Under 14",
     "title": "Under 14",
-    "subtitle": "",
+    "subtitle": "Trial",
     "round": "Final",
     "entries": [
       {
         "backNo": 95,
-        "name": "이나율",
+        "name": "Nayool LEE",
         "type": "Solo"
       },
       {
-        "backNo": 96,
-        "name": "백율",
+        "backNo": 44,
+        "name": "Yul BAEK",
         "type": "Solo"
       }
     ]
@@ -69,28 +69,28 @@
   {
     "no": 4,
     "section": "Over 19",
-    "title": "Over 19",
-    "subtitle": "",
+    "title": "Over 19 Solo",
+    "subtitle": "Latin 5 Dance",
     "round": "Final",
     "entries": [
       {
         "backNo": 17,
-        "name": "양지현",
+        "name": "JiHyeon YANG",
         "type": "Solo"
       },
       {
         "backNo": 18,
-        "name": "황은진",
+        "name": "EunJin HWANG",
         "type": "Solo"
       },
       {
         "backNo": 19,
-        "name": "유시진",
+        "name": "SiJin YOO",
         "type": "Solo"
       },
       {
         "backNo": 20,
-        "name": "송다솜",
+        "name": "DaSom SONG",
         "type": "Solo"
       }
     ]

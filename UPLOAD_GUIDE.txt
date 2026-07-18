@@ -1,10 +1,13 @@
-APDC MINI DESIGN REPAIR
+APDC MINI SYSTEM - SEARCH ENTRY SYNC VERSION
 
-이 파일은 디자인(CSS)이 적용되지 않은 경우 사용하는 복구본입니다.
+GitHub 저장소의 기존 파일을 모두 삭제한 뒤,
+이 ZIP 안의 파일 전체를 저장소 최상단에 업로드하세요.
 
-업로드:
-- 압축 안의 모든 HTML 파일
-- style.css
+수정 내용
+- 미니 프로그램 참가자 이름을 APDC SEARCH 표기와 동일하게 변경
+- 실제 APDC SEARCH 등번호로 수정
+- 누락되었던 shared.js 및 events.json 포함
 
-기존 저장소의 같은 이름 파일 위에 덮어쓴 뒤 Commit changes를 누르세요.
-shared.js와 events.json은 기존 파일을 그대로 사용합니다.
+심사위원
+- 김태원
+- 최지혜
