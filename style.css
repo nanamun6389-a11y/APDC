@@ -44,3 +44,26 @@ a{text-decoration:none;color:inherit}button,input,select{font:inherit}.top{heigh
   background:#111;
   color:#fff;
 }
+
+/* Combined HEAT / all EVENT judging notice */
+.combined-heat-notice,
+.all-events-script{
+  margin:14px auto;
+  max-width:980px;
+  padding:14px 18px;
+  border:2px solid #111;
+  border-radius:16px;
+  background:#fff;
+  line-height:1.45;
+}
+.combined-heat-notice strong,
+.combined-heat-notice span,
+.combined-heat-notice small,
+.all-events-script .ko,
+.all-events-script .en{
+  display:block;
+}
+.combined-heat-notice strong{font-size:17px;margin-bottom:4px;}
+.combined-heat-notice span,.all-events-script .ko{font-weight:800;}
+.combined-heat-notice small,.all-events-script .en{margin-top:4px;color:#555;font-size:14px;}
+.hidden{display:none!important;}
