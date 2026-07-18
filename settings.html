@@ -68,9 +68,6 @@ button{width:100%;padding:17px;margin-top:18px;border:0;border-radius:14px;backg
     </select>
 
     <button id="resetEventBtn">RESET SELECTED EVENT JUDGING</button>
-<button id="resetAllEventsBtn" style="background:#fff;color:#111;border:2px solid #111">
-  RESET ALL EVENT JUDGING
-</button>
     <div class="note">선택한 EVENT의 심사 입력만 초기화됩니다. 다른 EVENT는 유지됩니다.</div>
     <div id="msg"></div>
   </div>
@@ -95,29 +92,6 @@ document.getElementById('resetEventBtn').onclick=()=>{
   localStorage.setItem(SCORE_KEY,JSON.stringify(data));
   document.getElementById('msg').textContent=`EVENT ${eventNo} 심사가 초기화되었습니다.`;
 };
-
-document.getElementById('resetAllEventsBtn').onclick=()=>{
-  const ok=confirm(
-    '모든 EVENT의 심사 입력을 전부 초기화할까요?\n이 작업은 되돌릴 수 없습니다.\n\nReset ALL EVENT judging data?'
-  );
-  if(!ok)return;
-
-  localStorage.removeItem(SCORE_KEY);
-
-  // Remove other judge/submission keys if older versions created them.
-  const keys=[];
-  for(let i=0;i<localStorage.length;i++) keys.push(localStorage.key(i));
-  keys.forEach(k=>{
-    if(!k)return;
-    const x=k.toLowerCase();
-    if(x.includes('judge') || x.includes('score') || x.includes('submission')){
-      localStorage.removeItem(k);
-    }
-  });
-
-  document.getElementById('msg').textContent='모든 EVENT 심사 입력이 초기화되었습니다.';
-};
-
 </script>
 </body>
 </html>
