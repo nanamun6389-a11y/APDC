@@ -1,3 +1,6 @@
+const ADMIN_KEY='apdc-mini-admin-auth';
+function isAdmin(){return sessionStorage.getItem(ADMIN_KEY)==='1'}
+function requireAdmin(){if(!isAdmin()){location.replace('admin.html');return false}return true}
 
 const STATE_KEY='apdc-mini-all-state-v1';
 const SCORE_KEY='apdc-mini-all-scores-v1';
@@ -11,7 +14,7 @@ function statusText(x){return{READY:'UP NEXT',LIVE:'NOW PLAYING',FINISHED:'FINIS
 function loadJSON(key){try{return JSON.parse(localStorage.getItem(key))||{}}catch(e){return{}}}
 function saveJSON(key,val){localStorage.setItem(key,JSON.stringify(val))}
 function nav(active){return `<header class="top"><a class="brand" href="index.html">APDC MINI</a><nav class="nav">
-<a class="${active==='search'?'active':''}" href="search.html">SEARCH</a>
+<a href="index.html">ENTRY</a>
 <a class="${active==='dashboard'?'active':''}" href="dashboard.html">DASHBOARD</a>
 <a class="${active==='judge'?'active':''}" href="judge.html">JUDGE</a>
 <a class="${active==='mc'?'active':''}" href="mc.html">MC</a>
