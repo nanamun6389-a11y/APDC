@@ -1,6 +1,68 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APDC Results</title><link rel="stylesheet" href="style.css?v=5"></head><body><div id="nav"></div><main class="wrap"><section class="hero"><h1>Results</h1><p>EVENT는 함께 진행하지만 결과는 EVENT별로 따로 계산·확정합니다.</p></section><div class="grid2"><section class="panel"><h2>결과 확정</h2><select id="eventSelect" class="select"></select><div id="judgeData" style="margin-top:14px"></div><button id="calculate" class="btn dark" style="width:100%;margin-top:14px">두 심사 결과 평균으로 확정</button><div class="notice">각 EVENT는 독립 결과입니다. 동점일 경우 백넘버가 낮은 선수를 먼저 표시하는 시범 규칙입니다.</div></section><section class="panel"><div class="results-head"><h2>공개 결과</h2><div class="results-actions"><button id="csvBtn" class="btn">CSV</button><button id="printBtn" class="btn dark">인쇄</button></div></div><div id="published"></div></section></div></main><script src="shared.js"></script><script>requireAdmin();</script><script>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APDC Results</title><link rel="stylesheet" href="style.css?v=5"></head><body><div id="nav"></div><main class="wrap"><section class="hero"><h1>Results</h1><p>EVENT는 함께 진행하지만 결과는 EVENT별로 따로 계산·확정합니다.</p></section><div class="grid2"><section class="panel"><h2>결과 확정</h2><select id="eventSelect" class="select"></select><div id="judgeData" style="margin-top:14px"></div><button id="calculate" class="btn dark" style="width:100%;margin-top:14px">3명 심사 결과 평균으로 확정</button><div class="notice">각 EVENT는 독립 결과입니다. 동점일 경우 백넘버가 낮은 선수를 먼저 표시하는 시범 규칙입니다.</div></section><section class="panel"><div class="results-head"><h2>공개 결과</h2><div class="results-actions"><button id="csvBtn" class="btn">CSV</button><button id="printBtn" class="btn dark">인쇄</button></div></div><div id="published"></div></section></div></main><script src="shared.js"></script><script>requireAdmin();</script><script>
 document.getElementById('nav').innerHTML=nav('results');let E=[];fetch('events.json').then(r=>r.json()).then(x=>{E=x;eventSelect.innerHTML=E.map((e,i)=>`<option value="${i}">${String(e.no).padStart(2,'0')}. ${e.title}${e.subtitle?' · '+e.subtitle:''}</option>`).join('');render()});eventSelect.onchange=render;
-function render(){if(!E.length)return;let i=+eventSelect.value,e=E[i],scores=loadJSON(SCORE_KEY);judgeData.innerHTML=['김태원','김태원'].map(j=>{let s=scores[eventKey(j,e.no)]||{};return `<div class="event-card"><b>${j}</b>${e.entries.map(p=>`<div class="meta">${p.backNo} · ${p.name}: ${s[p.backNo]||'-'}위</div>`).join('')}</div>`}).join('');let r=loadJSON(RESULT_KEY)[resultKey(e.no)];published.innerHTML=r?r.map((x,idx)=>`<div class="result-row"><b>${idx+1}위</b><span>${x.backNo}</span><strong>${x.name}</strong></div>`).join(''):'아직 확정된 결과가 없습니다.'}
-calculate.onclick=()=>{let i=+eventSelect.value,e=E[i],scores=loadJSON(SCORE_KEY),rows=e.entries.map(p=>{let a=scores[eventKey('김태원',e.no)]?.[p.backNo],b=scores[eventKey('김태원',e.no)]?.[p.backNo],vals=[a,b].filter(Boolean);return{backNo:p.backNo,name:p.name,avg:vals.length?vals.reduce((x,y)=>x+y,0)/vals.length:999}}).sort((a,b)=>a.avg-b.avg||a.backNo-b.backNo);let all=loadJSON(RESULT_KEY);all[resultKey(e.no)]=rows;saveJSON(RESULT_KEY,all);render()};
+const JUDGES=[
+  {key:'Kim Tae Won',label:'김태원',legacy:['김태원']},
+  {key:'Mangnanyong',label:'망나뇽',legacy:['망나뇽']},
+  {key:'Moon Nana',label:'문나나',legacy:['문나나']}
+];
+
+function getJudgeScore(scores, judge, eventNo){
+  let s=scores[eventKey(judge.key,eventNo)];
+  if(s) return s;
+  for(const legacy of (judge.legacy||[])){
+    s=scores[eventKey(legacy,eventNo)];
+    if(s) return s;
+  }
+  return {};
+}
+
+function judgeSubmitted(scores, judge, e){
+  const s=getJudgeScore(scores,judge,e.no);
+  return e.entries.length>0 && e.entries.every(p=>s[p.backNo]);
+}
+
+function render(){
+  if(!E.length)return;
+  let i=+eventSelect.value,e=E[i],scores=loadJSON(SCORE_KEY);
+
+  judgeData.innerHTML=JUDGES.map(j=>{
+    let s=getJudgeScore(scores,j,e.no);
+    let done=judgeSubmitted(scores,j,e);
+    return `<div class="event-card">
+      <b>${j.label}</b>
+      <div class="meta">${done?'✓ 제출완료':'○ 미제출'}</div>
+      ${e.entries.map(p=>`<div class="meta">${p.backNo} · ${p.name}: ${s[p.backNo]||'-'}위</div>`).join('')}
+    </div>`;
+  }).join('');
+
+  let r=loadJSON(RESULT_KEY)[resultKey(e.no)];
+  published.innerHTML=r
+    ?r.map((x,idx)=>`<div class="result-row"><b>${idx+1}위</b><span>${x.backNo}</span><strong>${x.name}</strong></div>`).join('')
+    :'아직 확정된 결과가 없습니다.';
+}
+
+calculate.onclick=()=>{
+  let i=+eventSelect.value,e=E[i],scores=loadJSON(SCORE_KEY);
+
+  const missing=JUDGES.filter(j=>!judgeSubmitted(scores,j,e));
+  if(missing.length){
+    alert('아직 심사를 제출하지 않은 심사위원이 있습니다: '+missing.map(j=>j.label).join(', '));
+    return;
+  }
+
+  let rows=e.entries.map(p=>{
+    const vals=JUDGES.map(j=>getJudgeScore(scores,j,e.no)?.[p.backNo]).filter(v=>v);
+    return{
+      backNo:p.backNo,
+      name:p.name,
+      avg:vals.reduce((a,b)=>a+b,0)/vals.length
+    };
+  }).sort((a,b)=>a.avg-b.avg||a.backNo-b.backNo);
+
+  let all=loadJSON(RESULT_KEY);
+  all[resultKey(e.no)]=rows;
+  saveJSON(RESULT_KEY,all);
+  render();
+};
 csvBtn.onclick=()=>{if(!E.length)return;let i=+eventSelect.value,e=E[i],rows=loadJSON(RESULT_KEY)[resultKey(e.no)]||[];if(!rows.length){alert('확정된 결과가 없습니다.');return}let data=[['EVENT','RANK','BACK NO.','COMPETITOR / TEAM'],...rows.map((x,idx)=>[e.no,idx+1,x.backNo,x.name])];let csv='\ufeff'+data.map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(',')).join('\r\n');let blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`APDC_EVENT_${String(e.no).padStart(2,'0')}_${e.title.replace(/[^a-z0-9가-힣]+/gi,'_')}_RESULT.csv`;a.click();URL.revokeObjectURL(a.href)};printBtn.onclick=()=>window.print();
 </script></body></html>

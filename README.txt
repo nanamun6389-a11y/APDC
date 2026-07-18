@@ -29,3 +29,10 @@ RESET LOCATION UPDATE
 FINAL RESET CLEANUP
 - RESET CURRENT EVENT removed completely from Judge screen.
 - Event judging reset is available only in Admin > Settings.
+
+RESULTS FIX
+- Results now show 3 unique judges: 김태원 / 망나뇽 / 문나나.
+- Duplicate Kim Tae Won result card removed.
+- Final result uses the average of all 3 judges.
+- Result confirmation is blocked until all 3 judges submit the selected EVENT.
+- Legacy Korean Kim Tae Won score key is still readable for compatibility.
