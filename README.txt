@@ -35,3 +35,9 @@ LATEST UPDATE
 - Korean + easy English MC/LIVE/BROADCAST wording added:
   이번 HEAT에는 여러 EVENT가 함께 진행됩니다. 심사위원께서는 각 EVENT를 모두 개별 심사해 주세요.
   Multiple events are running in this heat. Please judge each event separately.
+
+EVENT NUMBER UPDATE
+- Mini-program EVENT numbers have been renumbered sequentially from 1 to 33.
+- Original APDC SEARCH event numbers were used only to extract the correct source entries.
+- All mini HEAT/EVENT references now use the new sequential mini EVENT numbers.
+- event_number_mapping.json keeps the old-to-new number mapping for verification.

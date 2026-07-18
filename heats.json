@@ -4,8 +4,8 @@
     "dance": "CR",
     "events": [
       {
-        "no": 2,
-        "event": "2",
+        "no": 1,
+        "event": "1",
         "section": "Under 12",
         "title": "Under 12 Solo CR",
         "eventName": "Under 12 Solo CR",
@@ -24,8 +24,8 @@
         ]
       },
       {
-        "no": 48,
-        "event": "48",
+        "no": 11,
+        "event": "11",
         "section": "Under 15",
         "title": "Under 15 Solo CR",
         "eventName": "Under 15 Solo CR",
@@ -44,8 +44,8 @@
         ]
       },
       {
-        "no": 80,
-        "event": "80",
+        "no": 22,
+        "event": "22",
         "section": "Over 35",
         "title": "Over 35 Solo CR",
         "eventName": "Over 35 Solo CR",
@@ -94,9 +94,9 @@
     ],
     "title": "HEAT 1 · CR",
     "eventNos": [
-      2,
-      48,
-      80
+      1,
+      11,
+      22
     ],
     "entryCount": 7
   },
@@ -105,8 +105,8 @@
     "dance": "RJ",
     "events": [
       {
-        "no": 8,
-        "event": "8",
+        "no": 2,
+        "event": "2",
         "section": "Under 12",
         "title": "Under 12 Solo RJ",
         "eventName": "Under 12 Solo RJ",
@@ -125,8 +125,8 @@
         ]
       },
       {
-        "no": 49,
-        "event": "49",
+        "no": 12,
+        "event": "12",
         "section": "Under 15",
         "title": "Under 15 Solo RJ",
         "eventName": "Under 15 Solo RJ",
@@ -147,8 +147,8 @@
     ],
     "title": "HEAT 2 · RJ",
     "eventNos": [
-      8,
-      49
+      2,
+      12
     ],
     "entryCount": 2
   },
@@ -157,8 +157,8 @@
     "dance": "CRS",
     "events": [
       {
-        "no": 9,
-        "event": "9",
+        "no": 3,
+        "event": "3",
         "section": "Under 12",
         "title": "Under 12 Solo CRS",
         "eventName": "Under 12 Solo CRS",
@@ -177,8 +177,8 @@
         ]
       },
       {
-        "no": 42,
-        "event": "42",
+        "no": 5,
+        "event": "5",
         "section": "Under 15",
         "title": "Under 15 Solo CRS",
         "eventName": "Under 15 Solo CRS",
@@ -197,8 +197,8 @@
         ]
       },
       {
-        "no": 87,
-        "event": "87",
+        "no": 28,
+        "event": "28",
         "section": "Over 19",
         "title": "Over 19 Solo Latin CRS",
         "eventName": "Over 19 Solo Latin CRS",
@@ -238,8 +238,8 @@
         ]
       },
       {
-        "no": 102,
-        "event": "102",
+        "no": 30,
+        "event": "30",
         "section": "Mania",
         "title": "Mania Latin CRS",
         "eventName": "Mania Latin CRS",
@@ -260,10 +260,10 @@
     ],
     "title": "HEAT 3 · CRS",
     "eventNos": [
-      9,
-      42,
-      87,
-      102
+      3,
+      5,
+      28,
+      30
     ],
     "entryCount": 7
   },
@@ -272,8 +272,8 @@
     "dance": "CRJ",
     "events": [
       {
-        "no": 10,
-        "event": "10",
+        "no": 4,
+        "event": "4",
         "section": "Under 12",
         "title": "Under 12 Solo CRJ",
         "eventName": "Under 12 Solo CRJ",
@@ -292,8 +292,8 @@
         ]
       },
       {
-        "no": 50,
-        "event": "50",
+        "no": 13,
+        "event": "13",
         "section": "Under 15",
         "title": "Under 15 Solo CRJ",
         "eventName": "Under 15 Solo CRJ",
@@ -314,8 +314,8 @@
     ],
     "title": "HEAT 4 · CRJ",
     "eventNos": [
-      10,
-      50
+      4,
+      13
     ],
     "entryCount": 2
   },
@@ -324,8 +324,8 @@
     "dance": "R",
     "events": [
       {
-        "no": 43,
-        "event": "43",
+        "no": 6,
+        "event": "6",
         "section": "Under 15",
         "title": "Under 15 Solo R",
         "eventName": "Under 15 Solo R",
@@ -344,8 +344,8 @@
         ]
       },
       {
-        "no": 63,
-        "event": "63",
+        "no": 15,
+        "event": "15",
         "section": "Under 10",
         "title": "Under 10 Solo R",
         "eventName": "Under 10 Solo R",
@@ -364,8 +364,8 @@
         ]
       },
       {
-        "no": 81,
-        "event": "81",
+        "no": 23,
+        "event": "23",
         "section": "Over 35",
         "title": "Over 35 Solo R",
         "eventName": "Over 35 Solo R",
@@ -414,9 +414,9 @@
     ],
     "title": "HEAT 5 · R",
     "eventNos": [
-      43,
-      63,
-      81
+      6,
+      15,
+      23
     ],
     "entryCount": 7
   },
@@ -425,8 +425,8 @@
     "dance": "C",
     "events": [
       {
-        "no": 44,
-        "event": "44",
+        "no": 7,
+        "event": "7",
         "section": "Under 15",
         "title": "Under 15 Solo C",
         "eventName": "Under 15 Solo C",
@@ -445,8 +445,8 @@
         ]
       },
       {
-        "no": 64,
-        "event": "64",
+        "no": 16,
+        "event": "16",
         "section": "Under 10",
         "title": "Under 10 Solo C",
         "eventName": "Under 10 Solo C",
@@ -465,8 +465,8 @@
         ]
       },
       {
-        "no": 84,
-        "event": "84",
+        "no": 25,
+        "event": "25",
         "section": "Over 35",
         "title": "Over 35 Solo C",
         "eventName": "Over 35 Solo C",
@@ -515,9 +515,9 @@
     ],
     "title": "HEAT 6 · C",
     "eventNos": [
-      44,
-      64,
-      84
+      7,
+      16,
+      25
     ],
     "entryCount": 7
   },
@@ -526,8 +526,8 @@
     "dance": "S",
     "events": [
       {
-        "no": 45,
-        "event": "45",
+        "no": 8,
+        "event": "8",
         "section": "Under 15",
         "title": "Under 15 Solo S",
         "eventName": "Under 15 Solo S",
@@ -546,8 +546,8 @@
         ]
       },
       {
-        "no": 65,
-        "event": "65",
+        "no": 17,
+        "event": "17",
         "section": "Under 10",
         "title": "Under 10 Solo S",
         "eventName": "Under 10 Solo S",
@@ -566,8 +566,8 @@
         ]
       },
       {
-        "no": 85,
-        "event": "85",
+        "no": 26,
+        "event": "26",
         "section": "Over 35",
         "title": "Over 35 Solo S",
         "eventName": "Over 35 Solo S",
@@ -616,9 +616,9 @@
     ],
     "title": "HEAT 7 · S",
     "eventNos": [
-      45,
-      65,
-      85
+      8,
+      17,
+      26
     ],
     "entryCount": 7
   },
@@ -627,8 +627,8 @@
     "dance": "P",
     "events": [
       {
-        "no": 46,
-        "event": "46",
+        "no": 9,
+        "event": "9",
         "section": "Under 15",
         "title": "Under 15 Solo P",
         "eventName": "Under 15 Solo P",
@@ -649,7 +649,7 @@
     ],
     "title": "HEAT 8 · P",
     "eventNos": [
-      46
+      9
     ],
     "entryCount": 1
   },
@@ -658,8 +658,8 @@
     "dance": "J",
     "events": [
       {
-        "no": 47,
-        "event": "47",
+        "no": 10,
+        "event": "10",
         "section": "Under 15",
         "title": "Under 15 Solo J",
         "eventName": "Under 15 Solo J",
@@ -680,7 +680,7 @@
     ],
     "title": "HEAT 9 · J",
     "eventNos": [
-      47
+      10
     ],
     "entryCount": 1
   },
@@ -689,8 +689,8 @@
     "dance": "CSRJ",
     "events": [
       {
-        "no": 51,
-        "event": "51",
+        "no": 14,
+        "event": "14",
         "section": "Under 15",
         "title": "Under 15 Solo CSRJ",
         "eventName": "Under 15 Solo CSRJ",
@@ -711,7 +711,7 @@
     ],
     "title": "HEAT 10 · CSRJ",
     "eventNos": [
-      51
+      14
     ],
     "entryCount": 1
   },
@@ -720,8 +720,8 @@
     "dance": "CRS",
     "events": [
       {
-        "no": 67,
-        "event": "67",
+        "no": 18,
+        "event": "18",
         "section": "Under 10",
         "title": "Under 10 Solo CRS",
         "eventName": "Under 10 Solo CRS",
@@ -742,7 +742,7 @@
     ],
     "title": "HEAT 11 · CRS",
     "eventNos": [
-      67
+      18
     ],
     "entryCount": 1
   },
@@ -751,8 +751,8 @@
     "dance": "CRJ",
     "events": [
       {
-        "no": 68,
-        "event": "68",
+        "no": 19,
+        "event": "19",
         "section": "Under 10",
         "title": "Under 10 Solo CRJ",
         "eventName": "Under 10 Solo CRJ",
@@ -773,7 +773,7 @@
     ],
     "title": "HEAT 12 · CRJ",
     "eventNos": [
-      68
+      19
     ],
     "entryCount": 1
   },
@@ -782,8 +782,8 @@
     "dance": "CR",
     "events": [
       {
-        "no": 69,
-        "event": "69",
+        "no": 20,
+        "event": "20",
         "section": "Under 10",
         "title": "Under 10 Solo CR",
         "eventName": "Under 10 Solo CR",
@@ -802,8 +802,8 @@
         ]
       },
       {
-        "no": 101,
-        "event": "101",
+        "no": 29,
+        "event": "29",
         "section": "Mania",
         "title": "Mania Latin CR",
         "eventName": "Mania Latin CR",
@@ -824,8 +824,8 @@
     ],
     "title": "HEAT 13 · CR",
     "eventNos": [
-      69,
-      101
+      20,
+      29
     ],
     "entryCount": 2
   },
@@ -834,8 +834,8 @@
     "dance": "RJ",
     "events": [
       {
-        "no": 70,
-        "event": "70",
+        "no": 21,
+        "event": "21",
         "section": "Under 10",
         "title": "Under 10 Solo RJ",
         "eventName": "Under 10 Solo RJ",
@@ -856,7 +856,7 @@
     ],
     "title": "HEAT 14 · RJ",
     "eventNos": [
-      70
+      21
     ],
     "entryCount": 1
   },
@@ -865,8 +865,8 @@
     "dance": "Over 35 Solo CSR",
     "events": [
       {
-        "no": 82,
-        "event": "82",
+        "no": 24,
+        "event": "24",
         "section": "Over 35",
         "title": "Over 35 Solo CSR",
         "eventName": "Over 35 Solo CSR",
@@ -915,7 +915,7 @@
     ],
     "title": "HEAT 15 · Over 35 Solo CSR",
     "eventNos": [
-      82
+      24
     ],
     "entryCount": 5
   },
@@ -924,8 +924,8 @@
     "dance": "5 DANCE",
     "events": [
       {
-        "no": 86,
-        "event": "86",
+        "no": 27,
+        "event": "27",
         "section": "Over 19",
         "title": "Over 19 Solo Latin 5 Dance",
         "eventName": "Over 19 Solo Latin 5 Dance",
@@ -967,7 +967,7 @@
     ],
     "title": "HEAT 16 · 5 DANCE",
     "eventNos": [
-      86
+      27
     ],
     "entryCount": 4
   },
@@ -976,8 +976,8 @@
     "dance": "Asia Pacific Amateur Solo Latin",
     "events": [
       {
-        "no": 104,
-        "event": "104",
+        "no": 31,
+        "event": "31",
         "section": "Amateur",
         "title": "Asia Pacific Amateur Solo Latin",
         "eventName": "Asia Pacific Amateur Solo Latin",
@@ -1019,7 +1019,7 @@
     ],
     "title": "HEAT 17 · Asia Pacific Amateur Solo Latin",
     "eventNos": [
-      104
+      31
     ],
     "entryCount": 4
   },
@@ -1028,8 +1028,8 @@
     "dance": "Asia Pacific Amateur Latin",
     "events": [
       {
-        "no": 105,
-        "event": "105",
+        "no": 32,
+        "event": "32",
         "section": "Amateur",
         "title": "Asia Pacific Amateur Latin",
         "eventName": "Asia Pacific Amateur Latin",
@@ -1050,7 +1050,7 @@
     ],
     "title": "HEAT 18 · Asia Pacific Amateur Latin",
     "eventNos": [
-      105
+      32
     ],
     "entryCount": 1
   },
@@ -1059,8 +1059,8 @@
     "dance": "Ama Rising Star Latin",
     "events": [
       {
-        "no": 106,
-        "event": "106",
+        "no": 33,
+        "event": "33",
         "section": "Amateur",
         "title": "Ama Rising Star Latin",
         "eventName": "Ama Rising Star Latin",
@@ -1081,7 +1081,7 @@
     ],
     "title": "HEAT 19 · Ama Rising Star Latin",
     "eventNos": [
-      106
+      33
     ],
     "entryCount": 1
   }
