@@ -1,10 +1,7 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APDC Judge</title><link rel="stylesheet" href="style.css?v=7-judge-tap-rank"></head><body>
-<div id="combinedHeatJudgeNotice" class="combined-heat-notice hidden">
-  <strong>합쳐진 경기 안내</strong>
-  <span>한 HEAT에 여러 EVENT가 있으면 모든 EVENT를 각각 심사해 주세요.</span>
-  <small>If one HEAT has multiple EVENTS, please judge every EVENT separately.</small>
+<div id="combinedHeatJudgeNotice" class="combined-heat-notice hidden"> <strong>합쳐진 경기 안내</strong> <span>한 HEAT에 여러 EVENT가 있으면 모든 EVENT를 각각 심사해 주세요.</span> <small>If one HEAT has multiple EVENTS, please judge every EVENT separately.</small>
 </div>
-<div id="nav"></div><main class="wrap"><section class="hero"><h1>Judge</h1><p>현재 HEAT 안의 EVENT를 각각 선택해 별도로 심사합니다. 제출 완료 여부가 EVENT 탭에 표시됩니다.</p></section><section class="panel"><div class="judges"><button class="judgebtn active" data-j="김태원">김태원</button><button class="judgebtn" data-j="최지혜">최지혜</button></div><div class="judge-toolbar"><select id="heatSelect" class="select"></select><div id="heatStatus" class="badge"></div></div><div id="eventTabs" class="event-tabs"></div><div class="statusbox" style="margin-top:14px"><div class="kicker" id="eno"></div><div class="bigtitle" id="title"></div><div class="meta" id="meta"></div></div><table class="entry-table"><thead><tr><th>BACK NO.</th><th>COMPETITOR / TEAM</th><th>선택 순위</th></tr></thead><tbody id="body"></tbody></table><button id="save" class="btn dark" style="width:100%;margin-top:16px">이 EVENT 심사 저장</button><div id="msg" class="notice"></div></section></main><script src="shared.js"></script><script>requireAdmin();</script><script>
+<div id="nav"></div><main class="wrap"><section class="hero"><h1>Judge</h1><p>현재 HEAT 안의 EVENT를 각각 선택해 별도로 심사합니다. 제출 완료 여부가 EVENT 탭에 표시됩니다.</p></section><section class="panel"><div class="judges"><button class="judgebtn active" data-j="김태원">김태원</button><button class="judgebtn" data-j=></button></div><div class="judge-toolbar"><select id="heatSelect" class="select"></select><div id="heatStatus" class="badge"></div></div><div id="eventTabs" class="event-tabs"></div><div class="statusbox" style="margin-top:14px"><div class="kicker" id="eno"></div><div class="bigtitle" id="title"></div><div class="meta" id="meta"></div></div><table class="entry-table"><thead><tr><th>BACK NO.</th><th>COMPETITOR / TEAM</th><th>선택 순위</th></tr></thead><tbody id="body"></tbody></table><button id="save" class="btn dark" style="width:100%;margin-top:16px">이 EVENT 심사 저장</button><div id="msg" class="notice"></div></section></main><script src="shared.js"></script><script>requireAdmin();</script><script>
 document.getElementById('nav').innerHTML=nav('judge');let H=[],J='김태원',HI=0,EI=0,S=loadState();
 fetch('heats.json').then(r=>r.json()).then(x=>{H=x;HI=Math.max(0,Math.min(S.heatIndex||0,H.length-1));heatSelect.innerHTML=H.map((h,i)=>`<option value="${i}">HEAT ${String(h.heatNo).padStart(2,'0')} · ${h.dance} · ${h.events.length} EVENTS</option>`).join('');heatSelect.value=HI;render()});
 document.querySelectorAll('.judgebtn').forEach(b=>b.onclick=()=>{J=b.dataset.j;document.querySelectorAll('.judgebtn').forEach(x=>x.classList.toggle('active',x===b));render()});heatSelect.onchange=()=>{HI=+heatSelect.value;EI=0;render()};
@@ -12,25 +9,7 @@ let ORDER=[];
 function submitted(e){let s=loadJSON(SCORE_KEY)[eventKey(J,e.no)]||{};return e.entries.length>0&&e.entries.every(p=>s[p.backNo])}
 function currentEvent(){return H[HI].events[EI]}
 function loadOrder(e,saved){ORDER=Object.entries(saved).sort((a,b)=>a[1]-b[1]).map(([back])=>String(back)).filter(back=>e.entries.some(p=>String(p.backNo)===back))}
-function drawEntries(e){
-  body.innerHTML=e.entries.map(p=>{
-    let pos=ORDER.indexOf(String(p.backNo));
-    let rank=pos>=0?pos+1:'';
-    return `<tr class="rank-row ${rank?'selected':''}" data-back="${p.backNo}" role="button" tabindex="0">
-      <td>${p.backNo}</td>
-      <td><b>${p.name}</b></td>
-      <td><span class="rank-pick ${rank?'selected':''}">${rank?rank+'위':'누르기'}</span></td>
-    </tr>`;
-  }).join('');
-  document.querySelectorAll('.rank-row').forEach(row=>{
-    row.onclick=()=>toggleRank(String(row.dataset.back));
-    row.onkeydown=(ev)=>{
-      if(ev.key==='Enter'||ev.key===' '){
-        ev.preventDefault();
-        toggleRank(String(row.dataset.back));
-      }
-    };
-  });
+function drawEntries(e){ body.innerHTML=e.entries.map(p=>{ let pos=ORDER.indexOf(String(p.backNo)); let rank=pos>=0?pos+1:''; return `<tr class="rank-row ${rank?'selected':''}" data-back="${p.backNo}" role="button" tabindex="0"> <td>${p.backNo}</td> <td><b>${p.name}</b></td> <td><span class="rank-pick ${rank?'selected':''}">${rank?rank+'위':'누르기'}</span></td> </tr>`; }).join(''); document.querySelectorAll('.rank-row').forEach(row=>{ row.onclick=()=>toggleRank(String(row.dataset.back)); row.onkeydown=(ev)=>{ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); toggleRank(String(row.dataset.back)); } }; });
 }
 function toggleRank(back){let i=ORDER.indexOf(back);if(i>=0)ORDER.splice(i,1);else ORDER.push(back);drawEntries(currentEvent());msg.textContent=ORDER.length?`현재 ${ORDER.length}명 선택 · 다시 누르면 취소됩니다.`:'선수를 1위부터 순서대로 눌러 주세요.'}
 function render(){if(!H.length)return;let h=H[HI];EI=Math.min(EI,h.events.length-1);let all=loadJSON(SCORE_KEY);heatStatus.textContent=`${h.events.filter(submitted).length}/${h.events.length} SUBMITTED`;eventTabs.innerHTML=h.events.map((e,i)=>`<button class="event-tab ${i===EI?'active':''} ${submitted(e)?'done':''}" data-i="${i}"><span>EVENT ${String(e.no).padStart(2,'0')}</span><small>${submitted(e)?'✓ 제출완료':'○ 미제출'}</small></button>`).join('');document.querySelectorAll('.event-tab').forEach(b=>b.onclick=()=>{EI=+b.dataset.i;render()});let e=h.events[EI],saved=all[eventKey(J,e.no)]||{};loadOrder(e,saved);eno.textContent=`HEAT ${String(h.heatNo).padStart(2,'0')} · EVENT ${String(e.no).padStart(2,'0')}`;title.textContent=e.title+(e.subtitle?' · '+e.subtitle:'');meta.textContent=e.section+' · '+e.round+' · '+e.entries.length+' entries';drawEntries(e);msg.textContent=ORDER.length?`저장된 순위 ${ORDER.length}명 · 선수를 다시 누르면 취소됩니다.`:'선수를 1위부터 순서대로 눌러 주세요.'}
@@ -38,22 +17,7 @@ save.onclick=()=>{let h=H[HI],e=h.events[EI];if(ORDER.length!==e.entries.length)
 subscribeState(x=>{S=x;if(H.length&&x.status==='LIVE'&&HI!==(x.heatIndex||0)){HI=x.heatIndex||0;EI=0;heatSelect.value=HI;render()}});
 </script>
 <script>
-(function(){
-  function updateCombinedNotice(){
-    const notice=document.getElementById('combinedHeatJudgeNotice');
-    if(!notice) return;
-    let count=0;
-    try{
-      if(window.CURRENT_HEAT && Array.isArray(window.CURRENT_HEAT.events)) count=window.CURRENT_HEAT.events.length;
-    }catch(e){}
-    if(!count){
-      const tabs=document.querySelectorAll('[data-event], .event-tab, .event-btn, .heat-event-button');
-      count=tabs.length;
-    }
-    notice.classList.toggle('hidden', count<=1);
-  }
-  document.addEventListener('DOMContentLoaded', updateCombinedNotice);
-  setInterval(updateCombinedNotice, 800);
+(function(){ function updateCombinedNotice(){ const notice=document.getElementById('combinedHeatJudgeNotice'); if(!notice) return; let count=0; try{ if(window.CURRENT_HEAT && Array.isArray(window.CURRENT_HEAT.events)) count=window.CURRENT_HEAT.events.length; }catch(e){} if(!count){ const tabs=document.querySelectorAll('[data-event], .event-tab, .event-btn, .heat-event-button'); count=tabs.length; } notice.classList.toggle('hidden', count<=1); } document.addEventListener('DOMContentLoaded', updateCombinedNotice); setInterval(updateCombinedNotice, 800);
 })();
 </script>
 </body></html>

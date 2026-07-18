@@ -41,3 +41,9 @@ EVENT NUMBER UPDATE
 - Original APDC SEARCH event numbers were used only to extract the correct source entries.
 - All mini HEAT/EVENT references now use the new sequential mini EVENT numbers.
 - event_number_mapping.json keeps the old-to-new number mapping for verification.
+
+FINAL CLEANUP
+- Public Entry Search now displays mini EVENT numbers 01–33.
+- Judge: Kim Tae Won / 김태원 only.
+- Removed duplicate Kim Tae Won wording from Admin.
+- Removed Choi JiHye from Judge UI and judge configuration.
