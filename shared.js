@@ -2,11 +2,11 @@ const ADMIN_KEY='apdc-mini-admin-auth';
 function isAdmin(){return sessionStorage.getItem(ADMIN_KEY)==='1'}
 function requireAdmin(){if(!isAdmin()){location.replace('admin.html');return false}return true}
 
-const STATE_KEY='apdc-mini-group-state-v2';
+const STATE_KEY='apdc-mini-heat-state-v2';
 const SCORE_KEY='apdc-mini-event-scores-v2';
 const RESULT_KEY='apdc-mini-event-results-v2';
-const bc=('BroadcastChannel'in window)?new BroadcastChannel('apdc-mini-group'):null;
-function defaultState(){return{groupIndex:0,status:'READY',updatedAt:Date.now()}}
+const bc=('BroadcastChannel'in window)?new BroadcastChannel('apdc-mini-heat'):null;
+function defaultState(){return{heatIndex:0,status:'READY',updatedAt:Date.now()}}
 function loadState(){try{return JSON.parse(localStorage.getItem(STATE_KEY))||defaultState()}catch(e){return defaultState()}}
 function saveState(s){s.updatedAt=Date.now();localStorage.setItem(STATE_KEY,JSON.stringify(s));if(bc)bc.postMessage({type:'state',data:s});window.dispatchEvent(new CustomEvent('apdc-state',{detail:s}))}
 function subscribeState(fn){window.addEventListener('storage',e=>{if(e.key===STATE_KEY)fn(loadState())});window.addEventListener('apdc-state',e=>fn(e.detail));if(bc)bc.onmessage=e=>{if(e.data?.type==='state')fn(e.data.data)}}
@@ -24,4 +24,4 @@ function nav(active){return `<header class="top"><a class="brand" href="index.ht
 <a class="${active==='broadcast'?'active':''}" href="broadcast.html">BROADCAST</a>
 <a class="${active==='results'?'active':''}" href="results.html">RESULTS</a>
 </nav></header>`}
-function uniqueEventEntries(h){const m=new Map();h.events.forEach(e=>e.entries.forEach(p=>m.set(String(p.backNo),p)));return [...m.values()]}
+function uniqueHeatEntries(h){const m=new Map();h.events.forEach(e=>e.entries.forEach(p=>m.set(String(p.backNo),p)));return [...m.values()]}
