@@ -25,3 +25,7 @@ RESET LOCATION UPDATE
 - Removed reset control from Judge screen.
 - Added Settings page to Admin.
 - Admin Settings resets judging data for one selected EVENT only.
+
+FINAL RESET CLEANUP
+- RESET CURRENT EVENT removed completely from Judge screen.
+- Event judging reset is available only in Admin > Settings.
