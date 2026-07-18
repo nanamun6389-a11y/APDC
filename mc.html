@@ -3,6 +3,36 @@
   <div class="ko">🎤 여러 연령 EVENT가 함께 진행됩니다. 심사위원께서는 표시된 각 EVENT를 개별 심사해 주세요.</div>
   <div class="en">🎤 Multiple events are running in this group. Please judge each event separately.</div>
 </div>
-<div id="nav"></div><main class="wrap"><section class="hero"><h1>MC Screen</h1><p>EVENT 단위로 현재 경기와 다음 경기를 안내합니다.</p></section><section class="panel"><div class="kicker" id="hno"></div><div class="bigtitle" id="title"></div><div class="badge" id="badge"></div><div id="events" class="group-events" style="margin-top:18px"></div><hr style="margin:24px 0;border:0;border-top:1px solid #ddd"><div class="mcbox" id="script"></div><div class="event-card" style="margin-top:22px"><b>NEXT</b><div class="meta" id="nextinfo"></div></div></section></main><script src="shared.js"></script><script>if(sessionStorage.getItem('apdc_mini_admin_ok')!=='1'){location.replace('admin.html');}</script><script>
-document.getElementById('nav').innerHTML=nav('mc');let H=[],S=loadState();fetch('running_groups.json').then(r=>r.json()).then(x=>{H=x;render()});function render(){if(!H.length)return;let h=H[S.groupIndex||0];hno.textContent='EVENT '+String(h.groupNo).padStart(2,'0');title.textContent=h.dance+' · '+h.entryCount+' ON FLOOR';badge.textContent=statusText(S.status);events.innerHTML=h.events.map(e=>`<div class="group-event-row"><b>EVENT ${String(e.no).padStart(2,'0')}</b><span>${e.title}</span></div>`).join('');script.textContent=S.status==='LIVE'?'EVENT '+h.groupNo+' 참가 선수 여러분, 플로어로 입장해 주시기 바랍니다. 각 이벤트는 별도로 심사됩니다. 경기를 시작하겠습니다.':S.status==='FINISHED'?'EVENT '+h.groupNo+' 경기가 종료되었습니다. 선수 여러분께 큰 박수 부탁드립니다.':'다음 경기는 EVENT '+h.groupNo+' · '+h.dance+'입니다. 참가 선수 여러분께서는 준비해 주시기 바랍니다.';let n=H[(S.groupIndex||0)+1];nextinfo.textContent=n?'EVENT '+String(n.groupNo).padStart(2,'0')+' · '+n.dance+' · '+n.events.map(e=>'EVENT '+e.no).join(', '):'END OF PROGRAM'}subscribeState(x=>{S=x;render()});
+<div id="nav"></div><main class="wrap"><section class="hero"><h1>MC Screen</h1><p>EVENT 단위로 현재 경기와 다음 경기를 안내합니다.</p></section><section class="panel"><div class="kicker" id="hno"></div><div class="bigtitle" id="title"></div><div class="badge" id="badge"></div><div id="events" class="group-events" style="margin-top:18px"></div><hr style="margin:24px 0;border:0;border-top:1px solid #ddd"><div class="mcbox" id="script"></div><div class="event-card" style="margin-top:22px"><b>NEXT</b><div class="meta" id="nextinfo"></div></div></section></main><script src="shared.js"></script><script>requireAdmin();</script><script>
+document.getElementById('nav').innerHTML=nav('mc');let H=[],S=loadState();fetch('running_groups.json').then(r=>r.json()).then(x=>{H=x;render()});
+function groupLabel(h){
+  if(h.dance)return h.dance;
+  if(h.title)return h.title;
+  if(h.name)return h.name;
+  const ev=(h.events||[]).map(e=>e.title).filter(Boolean);
+  return ev.length===1?ev[0]:'EVENT '+String(h.groupNo??'').padStart(2,'0');
+}
+function floorCount(h){
+  if(h.entryCount!==undefined&&h.entryCount!==null)return h.entryCount;
+  const seen=new Set();
+  (h.events||[]).forEach(e=>(e.entries||[]).forEach(p=>seen.add(String(p.backNo??p.name??JSON.stringify(p)))));
+  return seen.size||'';
+}
+function render(){
+  if(!H.length)return;
+  let h=H[S.groupIndex||0];
+  const label=groupLabel(h), count=floorCount(h);
+  hno.textContent='EVENT '+String(h.groupNo).padStart(2,'0');
+  title.textContent=label+(count?' · '+count+' ON FLOOR':'');
+  badge.textContent=statusText(S.status);
+  events.innerHTML=(h.events||[]).map(e=>`<div class="group-event-row"><b>EVENT ${String(e.no).padStart(2,'0')}</b><span>${e.title||''}</span></div>`).join('');
+  script.textContent=S.status==='LIVE'
+    ?'EVENT '+h.groupNo+' 참가 선수 여러분, 플로어로 입장해 주시기 바랍니다. 각 이벤트는 별도로 심사됩니다. 경기를 시작하겠습니다.'
+    :S.status==='FINISHED'
+      ?'EVENT '+h.groupNo+' 경기가 종료되었습니다. 선수 여러분께 큰 박수 부탁드립니다.'
+      :'다음 경기는 EVENT '+h.groupNo+(label?' · '+label:'')+'입니다. 참가 선수 여러분께서는 준비해 주시기 바랍니다.';
+  let n=H[(S.groupIndex||0)+1];
+  nextinfo.textContent=n?'EVENT '+String(n.groupNo).padStart(2,'0')+(groupLabel(n)?' · '+groupLabel(n):'')+' · '+(n.events||[]).map(e=>'EVENT '+e.no).join(', '):'END OF PROGRAM';
+}
+subscribeState(x=>{S=x;render()});
 </script></body></html>

@@ -13,7 +13,7 @@
 <select id="groupSelect" class="select"></select><div id="groupStatus" class="badge"></div></div><div id="eventTabs" class="event-tabs"></div><div class="statusbox" style="margin-top:14px"><div class="kicker" id="eno"></div><div class="bigtitle" id="title"></div><div class="meta" id="meta"></div></div><table class="entry-table"><thead><tr><th>BACK NO.</th><th>COMPETITOR / TEAM</th><th>선택 순위</th></tr></thead><tbody id="body"></tbody></table><div style="display:grid;gap:10px;margin-top:16px">
 
 <button id="save" class="btn dark" style="width:100%">이 EVENT 심사 저장</button>
-</div><div id="msg" class="notice"></div></section></main><script src="shared.js"></script><script>if(sessionStorage.getItem('apdc_mini_admin_ok')!=='1'){location.replace('admin.html');}</script><script>
+</div><div id="msg" class="notice"></div></section></main><script src="shared.js"></script><script>requireAdmin();</script><script>
 document.getElementById('nav').innerHTML=nav('judge');let H=[],J='Kim Tae Won',HI=0,EI=0,S=loadState();
 fetch('running_groups.json').then(r=>r.json()).then(x=>{H=x;HI=Math.max(0,Math.min(S.groupIndex||0,H.length-1));groupSelect.innerHTML=H.map((h,i)=>`<option value="${i}">EVENT ${String(h.groupNo).padStart(2,'0')} · ${h.title || ""} · ${h.events.length} EVENTS</option>`).join('');groupSelect.value=HI;render()});
 document.querySelectorAll('.judgebtn').forEach(b=>b.onclick=()=>{J=b.dataset.j;document.querySelectorAll('.judgebtn').forEach(x=>x.classList.toggle('active',x===b));render()});groupSelect.onchange=()=>{HI=+groupSelect.value;EI=0;render()};
