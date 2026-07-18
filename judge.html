@@ -1,12 +1,20 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APDC Judge</title><link rel="stylesheet" href="style.css?v=7-judge-tap-rank"></head><body>
 <div id="combinedEventJudgeNotice" class="combined-group-notice hidden"> <strong>합쳐진 경기 안내</strong> <span>한 EVENT에 여러 EVENT가 있으면 모든 EVENT를 각각 심사해 주세요.</span> <small>If one EVENT has multiple EVENTS, please judge every EVENT separately.</small>
 </div>
-<div id="nav"></div><main class="wrap"><section class="hero"><h1>Judge</h1><p>현재 EVENT 안의 EVENT를 각각 선택해 별도로 심사합니다. 제출 완료 여부가 EVENT 탭에 표시됩니다.</p></section><section class="panel"><div class="judges"><button class="judgebtn active" data-j="김태원">김태원</button><button class="judgebtn" data-j=></button></div><div class="judge-toolbar"><select id="groupSelect" class="select"></select><div id="groupStatus" class="badge"></div></div><div id="eventTabs" class="event-tabs"></div><div class="statusbox" style="margin-top:14px"><div class="kicker" id="eno"></div><div class="bigtitle" id="title"></div><div class="meta" id="meta"></div></div><table class="entry-table"><thead><tr><th>BACK NO.</th><th>COMPETITOR / TEAM</th><th>선택 순위</th></tr></thead><tbody id="body"></tbody></table><div style="display:grid;gap:10px;margin-top:16px">
+<div id="nav"></div><main class="wrap"><section class="hero"><h1>Judge</h1><p>현재 EVENT 안의 EVENT를 각각 선택해 별도로 심사합니다. 제출 완료 여부가 EVENT 탭에 표시됩니다.</p></section><section class="panel"><div class="judges"><button class="judgebtn active" data-j="김태원">김태원</button><button class="judgebtn" data-j=></button></div><div class="judge-toolbar">
+<div id="judgeButtons" class="judge-buttons">
+  <button type="button" class="judge-person active" data-judge="Kim Tae Won">김태원</button>
+  <button type="button" class="judge-person" data-judge="Mangnanyong">망나뇽</button>
+  <button type="button" class="judge-person" data-judge="Moon Nana">문나나</button>
+</div>
+<input type="hidden" id="judgeSelect" value="Kim Tae Won">
+
+<select id="groupSelect" class="select"></select><div id="groupStatus" class="badge"></div></div><div id="eventTabs" class="event-tabs"></div><div class="statusbox" style="margin-top:14px"><div class="kicker" id="eno"></div><div class="bigtitle" id="title"></div><div class="meta" id="meta"></div></div><table class="entry-table"><thead><tr><th>BACK NO.</th><th>COMPETITOR / TEAM</th><th>선택 순위</th></tr></thead><tbody id="body"></tbody></table><div style="display:grid;gap:10px;margin-top:16px">
 <button id="resetCurrentEventBtn" type="button" class="btn" style="width:100%;background:#fff;color:#111;border:2px solid #111">RESET CURRENT EVENT</button>
 <button id="save" class="btn dark" style="width:100%">이 EVENT 심사 저장</button>
 </div><div id="msg" class="notice"></div></section></main><script src="shared.js"></script><script>requireAdmin();</script><script>
 document.getElementById('nav').innerHTML=nav('judge');let H=[],J='김태원',HI=0,EI=0,S=loadState();
-fetch('running_groups.json').then(r=>r.json()).then(x=>{H=x;HI=Math.max(0,Math.min(S.groupIndex||0,H.length-1));groupSelect.innerHTML=H.map((h,i)=>`<option value="${i}">EVENT ${String(h.groupNo).padStart(2,'0')} · ${h.dance} · ${h.events.length} EVENTS</option>`).join('');groupSelect.value=HI;render()});
+fetch('running_groups.json').then(r=>r.json()).then(x=>{H=x;HI=Math.max(0,Math.min(S.groupIndex||0,H.length-1));groupSelect.innerHTML=H.map((h,i)=>`<option value="${i}">EVENT ${String(h.groupNo).padStart(2,'0')} · ${h.title || ""} · ${h.events.length} EVENTS</option>`).join('');groupSelect.value=HI;render()});
 document.querySelectorAll('.judgebtn').forEach(b=>b.onclick=()=>{J=b.dataset.j;document.querySelectorAll('.judgebtn').forEach(x=>x.classList.toggle('active',x===b));render()});groupSelect.onchange=()=>{HI=+groupSelect.value;EI=0;render()};
 let ORDER=[];
 function submitted(e){let s=loadJSON(SCORE_KEY)[eventKey(J,e.no)]||{};return e.entries.length>0&&e.entries.every(p=>s[p.backNo])}
@@ -35,6 +43,23 @@ subscribeState(x=>{S=x;if(H.length&&x.status==='LIVE'&&HI!==(x.groupIndex||0)){H
 </script>
 <script>
 (function(){ function updateCombinedNotice(){ const notice=document.getElementById('combinedEventJudgeNotice'); if(!notice) return; let count=0; try{ if(window.CURRENT_EVENT && Array.isArray(window.CURRENT_EVENT.events)) count=window.CURRENT_EVENT.events.length; }catch(e){} if(!count){ const tabs=document.querySelectorAll('[data-event], .event-tab, .event-btn, .group-event-button'); count=tabs.length; } notice.classList.toggle('hidden', count<=1); } document.addEventListener('DOMContentLoaded', updateCombinedNotice); setInterval(updateCombinedNotice, 800);
+})();
+</script>
+<script>
+(function(){
+  const hidden=document.getElementById('judgeSelect');
+  const btns=[...document.querySelectorAll('.judge-person')];
+  btns.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      btns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      if(hidden) hidden.value=btn.dataset.judge;
+      try{
+        if(typeof J!=='') J=btn.dataset.judge;
+        if(typeof render==='function') render();
+      }catch(e){}
+    });
+  });
 })();
 </script>
 </body></html>
