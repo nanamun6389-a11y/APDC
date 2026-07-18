@@ -36,3 +36,9 @@ RESULTS FIX
 - Final result uses the average of all 3 judges.
 - Result confirmation is blocked until all 3 judges submit the selected EVENT.
 - Legacy Korean Kim Tae Won score key is still readable for compatibility.
+
+SETTINGS ALL RESET
+- Added RESET ALL EVENT JUDGING in Admin > Settings.
+- Confirmation is required.
+- Resets all EVENT judging/submission data at once.
+- Individual EVENT reset remains available.
