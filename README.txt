@@ -14,3 +14,9 @@ JUDGE UI CLEAN FIX
 - Removed blank judge button issue.
 - Removed undefined from EVENT selector.
 - Removed duplicated EVENT number labels.
+
+JUDGE SELECTOR CLEANUP
+- Removed old large black Kim Tae Won box and empty white box.
+- Only 3 judge buttons remain: 김태원 / 망나뇽 / 문나나.
+- Active judge is shown with black background.
+- Selected judge label is displayed below buttons.

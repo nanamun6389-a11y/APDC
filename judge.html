@@ -1,12 +1,13 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>APDC Judge</title><link rel="stylesheet" href="style.css?v=7-judge-tap-rank"></head><body>
 <div id="combinedEventJudgeNotice" class="combined-group-notice hidden"> <strong>합쳐진 경기 안내</strong> <span>한 EVENT에 여러 EVENT가 있으면 모든 EVENT를 각각 심사해 주세요.</span> <small>If one EVENT has multiple EVENTS, please judge every EVENT separately.</small>
 </div>
-<div id="nav"></div><main class="wrap"><section class="hero"><h1>Judge</h1><p>현재 EVENT 안의 EVENT를 각각 선택해 별도로 심사합니다. 제출 완료 여부가 EVENT 탭에 표시됩니다.</p></section><section class="panel"><div class="judges"><button class="judgebtn active" data-j="김태원">김태원</button><button class="judgebtn" data-j=></button></div><div class="judge-toolbar">
+<div id="nav"></div><main class="wrap"><section class="hero"><h1>Judge</h1><p>현재 EVENT 안의 EVENT를 각각 선택해 별도로 심사합니다. 제출 완료 여부가 EVENT 탭에 표시됩니다.</p></section><section class="panel"><div class="judges"></div><div class="judge-toolbar">
 <div id="judgeButtons" class="judge-buttons">
   <button type="button" class="judge-person active" data-judge="Kim Tae Won">김태원</button>
   <button type="button" class="judge-person" data-judge="Mangnanyong">망나뇽</button>
   <button type="button" class="judge-person" data-judge="Moon Nana">문나나</button>
 </div>
+<div id="selectedJudgeLabel" class="selected-judge-label">선택된 심사위원: 김태원</div>
 <input type="hidden" id="judgeSelect" value="Kim Tae Won">
 
 <select id="groupSelect" class="select"></select><div id="groupStatus" class="badge"></div></div><div id="eventTabs" class="event-tabs"></div><div class="statusbox" style="margin-top:14px"><div class="kicker" id="eno"></div><div class="bigtitle" id="title"></div><div class="meta" id="meta"></div></div><table class="entry-table"><thead><tr><th>BACK NO.</th><th>COMPETITOR / TEAM</th><th>선택 순위</th></tr></thead><tbody id="body"></tbody></table><div style="display:grid;gap:10px;margin-top:16px">
@@ -62,4 +63,30 @@ subscribeState(x=>{S=x;if(H.length&&x.status==='LIVE'&&HI!==(x.groupIndex||0)){H
   });
 })();
 </script>
+
+<script>
+(function(){
+  function setupJudgeButtons(){
+    const hidden=document.getElementById('judgeSelect');
+    const label=document.getElementById('selectedJudgeLabel');
+    const btns=[...document.querySelectorAll('.judge-person')];
+    if(!btns.length) return;
+    btns.forEach(btn=>{
+      btn.onclick=()=>{
+        btns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const val=btn.dataset.judge;
+        if(hidden) hidden.value=val;
+        if(label) label.textContent='선택된 심사위원: '+btn.textContent.trim();
+        try{
+          if(typeof J!=='undefined') J=val;
+          if(typeof render==='function') render();
+        }catch(e){}
+      };
+    });
+  }
+  document.addEventListener('DOMContentLoaded',setupJudgeButtons);
+})();
+</script>
+
 </body></html>
