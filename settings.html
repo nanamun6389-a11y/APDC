@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>APDC MINI · Settings</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#111}
+header{background:#000;color:#fff;padding:22px;display:flex;justify-content:space-between;align-items:center}
+header a{color:#fff;text-decoration:none;font-weight:800}
+main{max-width:760px;margin:0 auto;padding:28px 18px}
+.card{background:#fff;border:1px solid #ddd;border-radius:22px;padding:22px}
+h1{font-size:42px;margin:0 0 10px}
+p{color:#666;line-height:1.5}
+label{display:block;font-weight:800;margin:22px 0 8px}
+select{width:100%;padding:16px;border:2px solid #111;border-radius:14px;font-size:17px;background:#fff}
+button{width:100%;padding:17px;margin-top:18px;border:0;border-radius:14px;background:#000;color:#fff;font-weight:900;font-size:17px}
+.note{margin-top:14px;font-size:14px;color:#777}
+#msg{margin-top:16px;font-weight:800}
+</style>
+</head>
+<body>
+<header>
+  <div><strong>APDC MINI ADMIN</strong></div>
+  <a href="admin.html">ADMIN MENU</a>
+</header>
+<main>
+  <div class="card">
+    <h1>Settings</h1>
+    <p>EVENT별 심사 입력을 관리자 화면에서 초기화합니다.</p>
+
+    <label for="resetEvent">초기화할 EVENT 선택</label>
+    <select id="resetEvent">
+      <option value="1">EVENT 01 · EVENT 01</option>
+<option value="2">EVENT 02 · EVENT 02</option>
+<option value="3">EVENT 03 · EVENT 03</option>
+<option value="4">EVENT 04 · EVENT 04</option>
+<option value="5">EVENT 05 · EVENT 05</option>
+<option value="6">EVENT 06 · EVENT 06</option>
+<option value="7">EVENT 07 · EVENT 07</option>
+<option value="8">EVENT 08 · EVENT 08</option>
+<option value="9">EVENT 09 · EVENT 09</option>
+<option value="10">EVENT 10 · EVENT 10</option>
+<option value="11">EVENT 11 · EVENT 11</option>
+<option value="12">EVENT 12 · EVENT 12</option>
+<option value="13">EVENT 13 · EVENT 13</option>
+<option value="14">EVENT 14 · EVENT 14</option>
+<option value="15">EVENT 15 · EVENT 15</option>
+<option value="16">EVENT 16 · EVENT 16</option>
+<option value="17">EVENT 17 · EVENT 17</option>
+<option value="18">EVENT 18 · EVENT 18</option>
+<option value="19">EVENT 19 · EVENT 19</option>
+<option value="20">EVENT 20 · EVENT 20</option>
+<option value="21">EVENT 21 · EVENT 21</option>
+<option value="22">EVENT 22 · EVENT 22</option>
+<option value="23">EVENT 23 · EVENT 23</option>
+<option value="24">EVENT 24 · EVENT 24</option>
+<option value="25">EVENT 25 · EVENT 25</option>
+<option value="26">EVENT 26 · EVENT 26</option>
+<option value="27">EVENT 27 · EVENT 27</option>
+<option value="28">EVENT 28 · EVENT 28</option>
+<option value="29">EVENT 29 · EVENT 29</option>
+<option value="30">EVENT 30 · EVENT 30</option>
+<option value="31">EVENT 31 · EVENT 31</option>
+<option value="32">EVENT 32 · EVENT 32</option>
+<option value="33">EVENT 33 · EVENT 33</option>
+    </select>
+
+    <button id="resetEventBtn">RESET SELECTED EVENT JUDGING</button>
+    <div class="note">선택한 EVENT의 심사 입력만 초기화됩니다. 다른 EVENT는 유지됩니다.</div>
+    <div id="msg"></div>
+  </div>
+</main>
+
+<script>
+const SCORE_KEY='apdc_mini_scores_v1';
+document.getElementById('resetEventBtn').onclick=()=>{
+  const eventNo=String(document.getElementById('resetEvent').value);
+  const ok=confirm(`EVENT ${eventNo}의 모든 심사 입력을 초기화할까요?\nReset all judging input for EVENT ${eventNo}?`);
+  if(!ok)return;
+
+  let data={};
+  try{ data=JSON.parse(localStorage.getItem(SCORE_KEY)||'{}'); }catch(e){ data={}; }
+
+  Object.keys(data).forEach(key=>{
+    const parts=key.split('|');
+    const keyEvent=parts[parts.length-1];
+    if(String(keyEvent)===eventNo) delete data[key];
+  });
+
+  localStorage.setItem(SCORE_KEY,JSON.stringify(data));
+  document.getElementById('msg').textContent=`EVENT ${eventNo} 심사가 초기화되었습니다.`;
+};
+</script>
+</body>
+</html>

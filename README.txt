@@ -20,3 +20,8 @@ JUDGE SELECTOR CLEANUP
 - Only 3 judge buttons remain: 김태원 / 망나뇽 / 문나나.
 - Active judge is shown with black background.
 - Selected judge label is displayed below buttons.
+
+RESET LOCATION UPDATE
+- Removed reset control from Judge screen.
+- Added Settings page to Admin.
+- Admin Settings resets judging data for one selected EVENT only.
