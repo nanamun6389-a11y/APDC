@@ -4,11 +4,38 @@
 <div class="searchbar"><input id="searchInput" class="input" placeholder="이름 / 백넘버"><button id="searchBtn" class="btn dark">검색</button></div><div id="results"></div></main>
 <script>
 q('nav').innerHTML=nav('entry');
-function render(){
- const s=q('searchInput').value.trim().toLowerCase();
- const rows=[];
- APDC_EVENTS.forEach(e=>e.entries.forEach(p=>{if(!s||p.name.toLowerCase().includes(s)||String(p.backNo).includes(s)) rows.push({e,p})}));
- q('results').innerHTML=rows.length?rows.map(({e,p})=>`<section class="card"><div class="kicker">EVENT ${String(e.no).padStart(2,'0')}</div><h2>${p.backNo} · ${p.name}</h2><div class="meta">${e.title} · ${e.section} · ${e.round}</div></section>`).join(''):'<section class="panel">검색 결과가 없습니다.</section>';
+function allPlayers(){
+  const map=new Map();
+  APDC_EVENTS.forEach(e=>e.entries.forEach(p=>{
+    const key=String(p.backNo)+'|'+p.name;
+    if(!map.has(key)) map.set(key,{backNo:p.backNo,name:p.name,events:[]});
+    map.get(key).events.push(e);
+  }));
+  return [...map.values()];
 }
-q('searchBtn').onclick=render;q('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')render()});render();
+function render(){
+  const s=q('searchInput').value.trim().toLowerCase();
+  const players=allPlayers().filter(p=>{
+    if(!s)return true;
+    return p.name.toLowerCase().includes(s) ||
+      String(p.backNo).includes(s) ||
+      p.events.some(e=>e.title.toLowerCase().includes(s)||e.section.toLowerCase().includes(s));
+  });
+  q('results').innerHTML=players.length?players.map(p=>`
+    <section class="card">
+      <div class="kicker">BACK NO. ${p.backNo}</div>
+      <h2>${p.name}</h2>
+      <div class="group-events">
+        ${p.events.sort((a,b)=>a.no-b.no).map(e=>`
+          <div class="group-event-row">
+            <b>EVENT ${String(e.no).padStart(2,'0')}</b>
+            <span>${e.title}</span>
+            <em>${e.section}</em>
+          </div>`).join('')}
+      </div>
+    </section>`).join(''):'<section class="panel">검색 결과가 없습니다.</section>';
+}
+q('searchBtn').onclick=render;
+q('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')render()});
+render();
 </script></body></html>
