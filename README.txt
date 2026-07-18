@@ -22,3 +22,10 @@ SYSTEM
 - RESULTS reads the exact same local score store as JUDGE.
 - Dashboard state feeds MC / LIVE / BROADCAST.
 - Settings includes single EVENT reset and ALL EVENT reset.
+
+
+CACHE RESET V4
+==============
+이 버전은 data-v4.js / app-v4.js / style-v4.css를 사용합니다.
+기존 data.js/app.js/style.css 캐시와 완전히 분리됩니다.
+GitHub 저장소에서 기존 파일을 전부 삭제 후 ZIP 안 13개 파일을 ROOT에 업로드하세요.
